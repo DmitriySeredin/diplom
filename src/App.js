@@ -1,8 +1,15 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import MainPage from "./Components/MainPage/MainPage";
 
 const App = () => {
-  return <div></div>;
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" render={() => <MainPage />} />
+      </Switch>
+    </BrowserRouter>
+  );
 };
 
 export default App;

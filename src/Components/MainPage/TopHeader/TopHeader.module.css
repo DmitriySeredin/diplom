@@ -22,6 +22,7 @@
 }
 .item:hover {
   color: rgb(105, 105, 248);
+  cursor: pointer;
 }
 
 .btn {
@@ -49,4 +50,37 @@
 
 .img:hover {
   box-shadow: 0 0 0 1px rgb(78, 75, 255);
+}
+
+@media (max-width: 1500px) {
+  .nav {
+    padding: 0 10rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .topHeader {
+    height: 15px;
+  }
+  .item {
+    padding: 0 5px;
+    line-height: 10px;
+    font-size: 9px;
+  }
+
+  .btn {
+    height: 15px;
+  }
+
+  .img {
+    width: 10px;
+    height: 10px;
+    margin: 0 7px;
+  }
 }

@@ -5,7 +5,7 @@ const Header = () => {
     e.preventDefault();
   };
   return (
-    <div className={style.Header}>
+    <div className={style.header}>
       <span className={style.logo}>HARAKTER</span>
       <div className={style.block}>
         <span className={style.name}>МУЖСКАЯ ОДЕЖДА</span>

@@ -1,0 +1,54 @@
+.main {
+  margin-bottom: 50px;
+}
+.separator {
+  width: 100%;
+  background: url("https://content.asos-media.com/-/media/homepages/unisex/homepages/2021/01_jan/promo-pack/letters/promo_dt_hero_live_banner_peak_bigo_1.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.wrapper {
+  background-color: black;
+  margin-top: 20px;
+  height: 45px;
+  vertical-align: middle;
+}
+.span {
+  color: white;
+  font-size: 33px;
+  font-weight: 900;
+  font-style: italic;
+  padding: 20px;
+  /* line-height: 32px; */
+  letter-spacing: 2px;
+}
+.p {
+  font-size: 11px;
+  margin-top: 20px;
+}
+
+@media (max-width: 376px) {
+  .main {
+    margin-bottom: 20px;
+  }
+  .wrapper {
+    margin-top: 10px;
+    height: 25px;
+  }
+  .span {
+    font-size: 15px;
+    font-weight: 900;
+    font-style: italic;
+    padding: 10px;
+    letter-spacing: 0.7px;
+  }
+  .p {
+    font-size: 9px;
+    margin-top: 10px;
+  }
+}

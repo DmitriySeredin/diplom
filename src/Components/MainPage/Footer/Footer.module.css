@@ -1,0 +1,82 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+.info {
+  display: flex;
+  justify-content: center;
+  background-color: #eeeeee;
+  padding: 20px 40px 10px 40px;
+}
+.footerbot {
+  background-color: #ddd;
+  display: flex;
+  justify-content: space-around;
+}
+.infoblock {
+  padding: 0px 34px;
+}
+.infoblock p:hover {
+  color: blue;
+  cursor: pointer;
+}
+.lng {
+  display: flex;
+  align-items: center;
+}
+.lng p,
+.lng img,
+.lng .line,
+.lng h4 {
+  margin-right: 10px;
+}
+.lng:hover {
+  color: blue;
+  cursor: pointer;
+}
+.lng img {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.line {
+  height: 20px;
+  border-left: 1px solid black;
+}
+.footerbot ul {
+  list-style: none;
+  display: flex;
+}
+.footerbot ul li {
+  padding: 0px 10px;
+  border-right: 1px solid black;
+}
+.footerbot ul li:last-child {
+  border-right: none;
+}
+.footerbot li:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+@media (max-width: 376px) {
+  .info {
+    display: none;
+  }
+  .footerbot {
+    background-color: #ddd;
+    display: flex;
+    justify-content: space-around;
+    font-size: 8px;
+  }
+  .footerbot ul li {
+    padding: 0px 5px;
+    border-right: 1px solid black;
+  }
+  .footerbot ul li:last-child {
+    border-right: none;
+  }
+  .footerbot li:hover {
+    color: blue;
+  }
+}

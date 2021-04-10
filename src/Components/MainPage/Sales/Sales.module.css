@@ -1,0 +1,42 @@
+.sales {
+  display: flex;
+  background-color: black;
+  height: 49px;
+  justify-content: center;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0px 16px;
+  padding: 1px 6px;
+  vertical-align: middle;
+  width: 561px;
+}
+.span {
+  text-align: center;
+  line-height: 15px;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.strong {
+  color: white;
+  font-size: 14px;
+  font-weight: 700px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 376px) {
+  .sales {
+    height: 40px;
+  }
+  .span {
+    line-height: 10px;
+  }
+  .strong {
+    font-size: 9px;
+    letter-spacing: 0.1px;
+  }
+}

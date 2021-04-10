@@ -1,0 +1,33 @@
+.block {
+  background-color: white;
+  height: 300px;
+  margin: 0px 0px 48px;
+  display: flex;
+  justify-content: center;
+}
+.img {
+  height: 300px;
+  width: 1258px;
+}
+
+@media (max-width: 1200px) {
+  .block {
+    height: 200px;
+    margin-bottom: 28px;
+  }
+  .img {
+    width: 900px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 376px) {
+  .block {
+    height: 100px;
+    margin-bottom: 15px;
+  }
+  .img {
+    width: 370px;
+    height: 100px;
+  }
+}

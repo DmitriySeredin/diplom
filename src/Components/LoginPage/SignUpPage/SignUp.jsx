@@ -39,6 +39,26 @@ const SignUp = () => {
             лицам и не будем публиковать информацию от вашего имени
           </p>
         </div>
+        <form className={style.form}>
+          <h3>ИЛИ ЗАРЕГИСТРИРУЙСЯ С ПОМОЩЬЮ ЭЛЕКТРОННОЙ ПОЧТЫ</h3>
+          <label htmlFor="email">
+            АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ:
+            <input type="email" name="email" />
+          </label>
+          <label htmlFor="firstName">
+            ИМЯ:
+            <input type="text" name="firstName" />
+          </label>
+          <label htmlFor="lastName">
+            ФАМИЛИЯ:
+            <input type="text" name="lastName" />
+          </label>
+          <label htmlFor="password">
+            ПАРОЛЬ:
+            <input type="password" name="password" />
+          </label>
+          <button className={style.btn}>ЗАРЕГИСТРИРОВАТЬСЯ НА HARAKTER</button>
+        </form>
       </div>
     </div>
   );

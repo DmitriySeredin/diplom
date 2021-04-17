@@ -1,0 +1,101 @@
+.signUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eeeeee;
+  padding-top: 4rem;
+  min-height: 100%;
+}
+
+.signUp h1 {
+  margin-bottom: 20px;
+}
+
+.formWrapper {
+  background-color: white;
+  width: 700px;
+  padding: 20px;
+}
+
+.links {
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.linkWrap {
+  padding: 20px;
+  width: 300px;
+}
+
+.linkWrap:first-of-type {
+  border-bottom: 2px solid blue;
+}
+
+.linkWrap:last-of-type {
+  border-bottom: 2px solid #eeeeee;
+}
+
+.link {
+  display: inline-block;
+  text-align: center;
+  width: 320px;
+}
+
+.linkWrap:first-of-type .link {
+  border-right: 3px solid #eeeeee;
+}
+
+.linkWrap:last-of-type .a {
+  color: rgb(145, 145, 145);
+}
+
+.linkWrap:last-of-type .a:hover {
+  color: rgb(197, 197, 197);
+  cursor: pointer;
+}
+
+.a {
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.googleAuth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.googlebtn {
+  background-color: white;
+  border: 2px solid rgb(202, 202, 202);
+  padding: 20px;
+  width: 150px;
+  outline: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.googlebtn img {
+  width: 20px;
+  height: 20px;
+}
+
+.googlebtn:hover {
+  border: 2px solid #eee;
+  color: rgb(202, 202, 202);
+  cursor: pointer;
+}
+
+.googleAuth p {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}

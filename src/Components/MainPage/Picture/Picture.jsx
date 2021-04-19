@@ -5,9 +5,10 @@ const Picture = () => {
     <div className={style.block}>
       <img
         className={style.img}
-        src="https://content.asos-media.com/-/media/homepages/unisex/ts-tm/tm/desktop/ru-tm-trossard-hp-desktop-hero-coming-soon.jpg"
+        src="http://bowandtie.ru/wp-content/uploads/2014/07/Dress-kod-v-nashey-zhizni.jpg"
         alt=""
       />
+      <h1>HARAKTER</h1>
     </div>
   );
 };

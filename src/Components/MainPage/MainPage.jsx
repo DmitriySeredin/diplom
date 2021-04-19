@@ -9,6 +9,7 @@ import Models from "./Models/Models";
 import Brands from "./Brands/Brands";
 import Payments from "./Payments/Payments";
 import Footer from "./Footer/Footer";
+import Items from "./Items/Items";
 
 const MainPage = () => {
   return (
@@ -18,6 +19,7 @@ const MainPage = () => {
       <Sales />
       <Picture />
       <Separator />
+      <Items />
       <Models />
       <Brands />
       <Payments />

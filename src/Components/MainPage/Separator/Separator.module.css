@@ -34,21 +34,6 @@
 
 @media (max-width: 376px) {
   .main {
-    margin-bottom: 20px;
-  }
-  .wrapper {
-    margin-top: 10px;
-    height: 25px;
-  }
-  .span {
-    font-size: 15px;
-    font-weight: 900;
-    font-style: italic;
-    padding: 10px;
-    letter-spacing: 0.7px;
-  }
-  .p {
-    font-size: 9px;
-    margin-top: 10px;
+    display: none;
   }
 }

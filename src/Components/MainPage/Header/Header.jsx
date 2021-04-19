@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import style from "./Header.module.css";
 const Header = () => {
   const handleSubmit = (e) => {
@@ -23,27 +24,33 @@ const Header = () => {
       </form>
 
       <button className={style.btn}>
-        <img
-          className={style.img}
-          src="https://pics.freeicons.io/uploads/icons/png/19339625881548233621-512.png"
-          alt="Профиль"
-        />
+        <NavLink to="/profile">
+          <img
+            className={style.img}
+            src="https://pics.freeicons.io/uploads/icons/png/19339625881548233621-512.png"
+            alt="Профиль"
+          />
+        </NavLink>
       </button>
 
       <button className={style.btn}>
-        <img
-          src="https://image.flaticon.com/icons/png/24/9/9294.png"
-          alt="Избранное"
-          className={style.img}
-        />
+        <NavLink to="/profile/favorite">
+          <img
+            src="https://image.flaticon.com/icons/png/24/9/9294.png"
+            alt="Избранное"
+            className={style.img}
+          />
+        </NavLink>
       </button>
 
       <button className={style.btn}>
-        <img
-          src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/88-512.png"
-          alt="Корзина"
-          className={style.img}
-        />
+        <NavLink to="/profile/buy">
+          <img
+            src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/88-512.png"
+            alt="Корзина"
+            className={style.img}
+          />
+        </NavLink>
       </button>
     </div>
   );

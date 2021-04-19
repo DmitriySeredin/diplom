@@ -5,7 +5,9 @@ import style from "./SignUp.module.css";
 const SignUp = () => {
   return (
     <div className={style.signUp}>
-      <h1>HARAKTER</h1>
+      <NavLink to="/" className={style.a}>
+        <h1>HARAKTER</h1>
+      </NavLink>
       <div className={style.formWrapper}>
         <div className={style.links}>
           <div className={style.linkWrap}>

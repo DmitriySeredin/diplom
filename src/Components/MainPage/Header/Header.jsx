@@ -7,7 +7,10 @@ const Header = () => {
   };
   return (
     <div className={style.header}>
-      <span className={style.logo}>HARAKTER</span>
+      <NavLink to="/" className={style.a}>
+        <span className={style.logo}>HARAKTER</span>
+      </NavLink>
+
       <div className={style.block}>
         <span className={style.name}>МУЖСКАЯ ОДЕЖДА</span>
       </div>

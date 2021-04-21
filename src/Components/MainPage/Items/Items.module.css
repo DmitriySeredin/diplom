@@ -40,6 +40,13 @@
   font-weight: 500;
 }
 
+.a {
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
 @media (max-width: 1293px) {
   .bigImg {
     margin-bottom: 20px;

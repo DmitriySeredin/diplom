@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import style from "./Models.module.css";
 const Models = () => {
   return (
@@ -21,7 +22,9 @@ const Models = () => {
               <p>Настроение творить</p>
             </div>
             <div className={style.btn}>
-              <span>КУПИТЬ ТРЕНДОВЫЕ МОДЕЛИ</span>
+              <NavLink className={style.a} to="/products">
+                <span>КУПИТЬ ТРЕНДОВЫЕ МОДЕЛИ</span>
+              </NavLink>
             </div>
           </div>
         </li>
@@ -42,7 +45,9 @@ const Models = () => {
               <p>Обнови свой стиль</p>
             </div>
             <div className={style.btn}>
-              <span>КУПИТЬ</span>
+              <NavLink className={style.a} to="/products">
+                <span>КУПИТЬ</span>
+              </NavLink>
             </div>
           </div>
         </li>

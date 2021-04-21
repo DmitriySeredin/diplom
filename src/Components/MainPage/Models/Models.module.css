@@ -146,6 +146,14 @@
 .btn span:hover {
   background-color: black;
   color: white;
+  cursor: pointer;
+}
+
+.a {
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
 /* Медиа запросы */

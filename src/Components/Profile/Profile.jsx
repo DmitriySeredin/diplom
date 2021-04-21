@@ -1,8 +1,15 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Route, Switch } from "react-router-dom";
+import {
+  removeFavorite,
+  selectFavorite,
+} from "../../store/reducers/products-reducer";
 import style from "./Profile.module.css";
 
 const Profile = () => {
+  const favorite = useSelector(selectFavorite);
+  const dispatch = useDispatch();
   return (
     <div className={style.profile}>
       <div className={style.header}>
@@ -43,7 +50,28 @@ const Profile = () => {
               <p>Профиль</p>
             </Route>
             <Route path="/profile/favorite">
-              <p>Избранное</p>
+              <h3 className={style.h3}>ИЗБРАННОЕ</h3>
+              {favorite.length !== 0 ? (
+                favorite.map((item) => {
+                  return (
+                    <div className={style.product} key={item.id}>
+                      <img src={item.url} alt="" />
+                      <div className={style.block}>
+                        <button>В корзину</button>
+                        <button
+                          onClick={() => dispatch(removeFavorite(item.id))}
+                        >
+                          Удалить
+                        </button>
+                      </div>
+                      <p>{item.name}</p>
+                      <span>От {item.price} руб.</span>
+                    </div>
+                  );
+                })
+              ) : (
+                <h3 className={style.h3}>НЕТ ИЗБРАННЫХ ТОВАРОВ</h3>
+              )}
             </Route>
             <Route path="/profile/buy">
               <p>Корзина</p>

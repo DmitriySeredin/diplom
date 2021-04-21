@@ -19,6 +19,12 @@
 .content {
   grid-area: content;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .main {
@@ -69,4 +75,62 @@
   text-decoration: none;
   font-weight: bold;
   color: black;
+}
+
+.h3 {
+  margin-top: 30px;
+}
+
+.product {
+  width: 200px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.product img {
+  width: 200px;
+}
+
+.block {
+  margin-top: -35px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.block button {
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+  width: 70px;
+  background-color: white;
+  color: #2d2d2d;
+  border: 1px solid #2d2d2d;
+}
+
+.block button:hover {
+  background: #eee;
+  color: rgb(129, 129, 129);
+  border: 1px solid #afafaf;
+}
+
+.block button:active {
+  background: #eee;
+  color: black;
+  border: 1px solid #afafaf;
+}
+
+.product p {
+  line-height: 20px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.product span {
+  color: #2d2d2d;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }

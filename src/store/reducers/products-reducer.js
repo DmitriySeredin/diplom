@@ -47,11 +47,19 @@ export const productsSlice = createSlice({
         )[0]
       );
     },
+    removeFavorite: (state, action) => {
+      state.favorite.pop(
+        state.products.jackets.filter(
+          (jacket) => jacket.id === action.payload
+        )[0]
+      );
+    },
   },
 });
 
-export const { addFavorite } = productsSlice.actions;
+export const { addFavorite, removeFavorite } = productsSlice.actions;
 
 export const selectProduct = (state) => state.products.products.jackets;
+export const selectFavorite = (state) => state.products.favorite;
 
 export default productsSlice.reducer;

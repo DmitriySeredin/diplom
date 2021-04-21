@@ -5,7 +5,7 @@ const Items = () => {
   return (
     <section className={style.section}>
       <div className={style.items}>
-        <NavLink className={style.a} to="/products">
+        <NavLink className={style.a} to="/products/jackets">
           <div className={style.imgWrapper}>
             <img
               className={style.img}

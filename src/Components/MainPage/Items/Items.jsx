@@ -19,7 +19,7 @@ const Items = () => {
           </div>
         </NavLink>
 
-        <NavLink className={style.a} to="/products">
+        <NavLink className={style.a} to="/products/pants">
           <div className={style.imgWrapper}>
             <img
               className={style.img}
@@ -33,7 +33,7 @@ const Items = () => {
           </div>
         </NavLink>
 
-        <NavLink className={style.a} to="/products">
+        <NavLink className={style.a} to="/products/shirts">
           <div className={style.imgWrapper}>
             <img
               className={style.img}
@@ -47,7 +47,11 @@ const Items = () => {
           </div>
         </NavLink>
 
-        <NavLink className={style.a} to="/products">
+        <NavLink
+          className={style.a}
+          to="/products/cardigans
+"
+        >
           <div className={style.imgWrapper}>
             <img
               className={style.img}

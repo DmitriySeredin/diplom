@@ -2,6 +2,7 @@ import React from "react";
 import TopHeader from "./TopHeader/TopHeader";
 import style from "./MainPage.module.css";
 import Header from "./Header/Header";
+import ProductsList from "./ProductsList/ProductsList";
 import Sales from "./Sales/Sales";
 import Picture from "./Picture/Picture";
 import Separator from "./Separator/Separator";
@@ -17,6 +18,7 @@ const MainPage = () => {
       <TopHeader />
       <Header />
       <Sales />
+      <ProductsList />
       <Picture />
       <Separator />
       <Items />

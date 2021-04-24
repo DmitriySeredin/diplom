@@ -70,3 +70,16 @@
   font-weight: bold;
   letter-spacing: 0.5px;
 }
+
+@media (max-width: 376px) {
+  .main {
+    flex-direction: column;
+  }
+  .product {
+    width: 300px;
+  }
+
+  .product img {
+    width: 300px;
+  }
+}

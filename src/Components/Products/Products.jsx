@@ -20,6 +20,7 @@ import {
   selectSpirit,
 } from "../../store/reducers/products-reducer";
 import { Route, Switch } from "react-router";
+import ProductsList from "../MainPage/ProductsList/ProductsList";
 
 const Products = () => {
   const jackets = useSelector(selectJacket);
@@ -33,6 +34,7 @@ const Products = () => {
     <div className={style.products}>
       <TopHeader />
       <Header />
+      <ProductsList />
       <Switch>
         <Route path="/products/jackets">
           <div className={style.component}>

@@ -12,6 +12,12 @@ import {
   addFavoritePants,
   addFavoriteShirt,
   addFavoriteSpirit,
+  buyBrand,
+  buyCardigan,
+  buyJacket,
+  buyPants,
+  buyShirt,
+  buySpirit,
   selectBrand,
   selectCardigan,
   selectJacket,
@@ -45,7 +51,9 @@ const Products = () => {
                   <div className={style.product} key={jacket.id}>
                     <img src={jacket.url} alt="" />
                     <div className={style.block}>
-                      <button>В корзину</button>
+                      <button onClick={() => dispatch(buyJacket(jacket.id))}>
+                        В корзину
+                      </button>
                       <button
                         onClick={() => dispatch(addFavoriteJacket(jacket.id))}
                       >
@@ -69,7 +77,9 @@ const Products = () => {
                   <div className={style.product} key={pant.id}>
                     <img src={pant.url} alt="" />
                     <div className={style.block}>
-                      <button>В корзину</button>
+                      <button onClick={() => dispatch(buyPants(pant.id))}>
+                        В корзину
+                      </button>
                       <button
                         onClick={() => dispatch(addFavoritePants(pant.id))}
                       >
@@ -93,7 +103,9 @@ const Products = () => {
                   <div className={style.product} key={shirt.id}>
                     <img src={shirt.url} alt="" />
                     <div className={style.block}>
-                      <button>В корзину</button>
+                      <button onClick={() => dispatch(buyShirt(shirt.id))}>
+                        В корзину
+                      </button>
                       <button
                         onClick={() => dispatch(addFavoriteShirt(shirt.id))}
                       >
@@ -117,7 +129,11 @@ const Products = () => {
                   <div className={style.product} key={cardigan.id}>
                     <img src={cardigan.url} alt="" />
                     <div className={style.block}>
-                      <button>В корзину</button>
+                      <button
+                        onClick={() => dispatch(buyCardigan(cardigan.id))}
+                      >
+                        В корзину
+                      </button>
                       <button
                         onClick={() =>
                           dispatch(addFavoriteCardigan(cardigan.id))
@@ -143,7 +159,9 @@ const Products = () => {
                   <div className={style.product} key={spirit.id}>
                     <img src={spirit.url} alt="" />
                     <div className={style.block}>
-                      <button>В корзину</button>
+                      <button onClick={() => dispatch(buySpirit(spirit.id))}>
+                        В корзину
+                      </button>
                       <button
                         onClick={() => dispatch(addFavoriteSpirit(spirit.id))}
                       >
@@ -167,7 +185,9 @@ const Products = () => {
                   <div className={style.product} key={brand.id}>
                     <img src={brand.url} alt="" />
                     <div className={style.block}>
-                      <button>В корзину</button>
+                      <button onClick={() => dispatch(buyBrand(brand.id))}>
+                        В корзину
+                      </button>
                       <button
                         onClick={() => dispatch(addFavoriteBrand(brand.id))}
                       >

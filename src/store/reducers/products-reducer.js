@@ -184,6 +184,7 @@ const initialState = {
     ],
   },
   favorite: [],
+  basket: [],
 };
 
 export const productsSlice = createSlice({
@@ -281,6 +282,95 @@ export const productsSlice = createSlice({
         (item) => item.id !== action.payload
       );
     },
+    buyJacket: (state, action) => {
+      if (
+        state.basket.includes(
+          state.basket.filter((item) => item.id === action.payload)[0]
+        )
+      ) {
+        return state;
+      } else {
+        state.basket.push(
+          state.products.jackets.filter(
+            (jacket) => jacket.id === action.payload
+          )[0]
+        );
+      }
+    },
+    buyPants: (state, action) => {
+      if (
+        state.basket.includes(
+          state.basket.filter((item) => item.id === action.payload)[0]
+        )
+      ) {
+        return state;
+      } else {
+        state.basket.push(
+          state.products.pants.filter((pant) => pant.id === action.payload)[0]
+        );
+      }
+    },
+    buyShirt: (state, action) => {
+      if (
+        state.basket.includes(
+          state.basket.filter((item) => item.id === action.payload)[0]
+        )
+      ) {
+        return state;
+      } else {
+        state.basket.push(
+          state.products.shirts.filter(
+            (shirt) => shirt.id === action.payload
+          )[0]
+        );
+      }
+    },
+    buyCardigan: (state, action) => {
+      if (
+        state.basket.includes(
+          state.basket.filter((item) => item.id === action.payload)[0]
+        )
+      ) {
+        return state;
+      } else {
+        state.basket.push(
+          state.products.cardigans.filter(
+            (cardigan) => cardigan.id === action.payload
+          )[0]
+        );
+      }
+    },
+    buySpirit: (state, action) => {
+      if (
+        state.basket.includes(
+          state.basket.filter((item) => item.id === action.payload)[0]
+        )
+      ) {
+        return state;
+      } else {
+        state.basket.push(
+          state.products.spirit.filter(
+            (spirt) => spirt.id === action.payload
+          )[0]
+        );
+      }
+    },
+    buyBrand: (state, action) => {
+      if (
+        state.basket.includes(
+          state.basket.filter((item) => item.id === action.payload)[0]
+        )
+      ) {
+        return state;
+      } else {
+        state.basket.push(
+          state.products.brand.filter((bran) => bran.id === action.payload)[0]
+        );
+      }
+    },
+    removeBasket: (state, action) => {
+      state.basket = state.basket.filter((item) => item.id !== action.payload);
+    },
   },
 });
 
@@ -292,6 +382,13 @@ export const {
   addFavoriteSpirit,
   addFavoriteBrand,
   removeFavorite,
+  buyJacket,
+  buyPants,
+  buyShirt,
+  buyCardigan,
+  buySpirit,
+  buyBrand,
+  removeBasket,
 } = productsSlice.actions;
 
 export const selectJacket = (state) => state.products.products.jackets;
@@ -301,5 +398,6 @@ export const selectCardigan = (state) => state.products.products.cardigans;
 export const selectSpirit = (state) => state.products.products.spirit;
 export const selectBrand = (state) => state.products.products.brand;
 export const selectFavorite = (state) => state.products.favorite;
+export const selectBasket = (state) => state.products.basket;
 
 export default productsSlice.reducer;

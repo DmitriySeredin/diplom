@@ -86,11 +86,28 @@
   height: 15px;
 }
 
+.favImg {
+  width: 15px;
+  height: 15px;
+  margin-left: -12px;
+}
+
 .a {
   letter-spacing: 1px;
   text-decoration: none;
   font-weight: bold;
   color: black;
+}
+
+.counter {
+  font-size: 10px;
+  background-color: red;
+  border-radius: 50%;
+  padding: 2px;
+  color: white;
+  position: relative;
+  top: -10px;
+  left: -5px;
 }
 
 @media (max-width: 1828px) {

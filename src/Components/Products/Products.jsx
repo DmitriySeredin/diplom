@@ -6,14 +6,18 @@ import Payments from "../MainPage/Payments/Payments";
 import Footer from "../MainPage/Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  addFavoriteBrand,
   addFavoriteCardigan,
   addFavoriteJacket,
   addFavoritePants,
   addFavoriteShirt,
+  addFavoriteSpirit,
+  selectBrand,
   selectCardigan,
   selectJacket,
   selectPants,
   selectShirt,
+  selectSpirit,
 } from "../../store/reducers/products-reducer";
 import { Route, Switch } from "react-router";
 
@@ -22,6 +26,8 @@ const Products = () => {
   const pants = useSelector(selectPants);
   const shirts = useSelector(selectShirt);
   const cardigans = useSelector(selectCardigan);
+  const spirits = useSelector(selectSpirit);
+  const brands = useSelector(selectBrand);
   const dispatch = useDispatch();
   return (
     <div className={style.products}>
@@ -120,6 +126,54 @@ const Products = () => {
                     </div>
                     <p>{cardigan.name}</p>
                     <span>От {cardigan.price} руб.</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Route>
+        <Route path="/products/styleone">
+          <div className={style.component}>
+            <h3>ДУХ ТВОРЧЕСТВА</h3>
+            <div className={style.main}>
+              {spirits.map((spirit) => {
+                return (
+                  <div className={style.product} key={spirit.id}>
+                    <img src={spirit.url} alt="" />
+                    <div className={style.block}>
+                      <button>В корзину</button>
+                      <button
+                        onClick={() => dispatch(addFavoriteSpirit(spirit.id))}
+                      >
+                        В избранное
+                      </button>
+                    </div>
+                    <p>{spirit.name}</p>
+                    <span>От {spirit.price} руб.</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Route>
+        <Route path="/products/styletwo">
+          <div className={style.component}>
+            <h3>BARKLAND</h3>
+            <div className={style.main}>
+              {brands.map((brand) => {
+                return (
+                  <div className={style.product} key={brand.id}>
+                    <img src={brand.url} alt="" />
+                    <div className={style.block}>
+                      <button>В корзину</button>
+                      <button
+                        onClick={() => dispatch(addFavoriteBrand(brand.id))}
+                      >
+                        В избранное
+                      </button>
+                    </div>
+                    <p>{brand.name}</p>
+                    <span>От {brand.price} руб.</span>
                   </div>
                 );
               })}

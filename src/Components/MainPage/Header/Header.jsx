@@ -1,7 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { selectFavorite } from "../../../store/reducers/products-reducer";
 import style from "./Header.module.css";
 const Header = () => {
+  const favoriteCount = useSelector(selectFavorite).length;
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -37,11 +40,14 @@ const Header = () => {
       </button>
 
       <button className={style.btn}>
+        {favoriteCount === 0 ? null : (
+          <span className={style.counter}>{favoriteCount}</span>
+        )}
         <NavLink to="/profile/favorite">
           <img
             src="https://image.flaticon.com/icons/png/24/9/9294.png"
             alt="Избранное"
-            className={style.img}
+            className={favoriteCount === 0 ? style.img : style.favImg}
           />
         </NavLink>
       </button>

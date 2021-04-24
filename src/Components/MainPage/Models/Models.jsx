@@ -22,7 +22,7 @@ const Models = () => {
               <p>Настроение творить</p>
             </div>
             <div className={style.btn}>
-              <NavLink className={style.a} to="/products">
+              <NavLink className={style.a} to="/products/styleone">
                 <span>КУПИТЬ ТРЕНДОВЫЕ МОДЕЛИ</span>
               </NavLink>
             </div>
@@ -45,7 +45,7 @@ const Models = () => {
               <p>Обнови свой стиль</p>
             </div>
             <div className={style.btn}>
-              <NavLink className={style.a} to="/products">
+              <NavLink className={style.a} to="/products/styletwo">
                 <span>КУПИТЬ</span>
               </NavLink>
             </div>

@@ -122,6 +122,66 @@ const initialState = {
         price: 2690,
       },
     ],
+    spirit: [
+      {
+        id: nanoid(),
+        name: "Черная рубашка с принтом",
+        url:
+          "https://images.asos-media.com/products/chernaya-rubashka-s-otlozhnym-vorotnikom-i-printom-topman/24112849-1-black?$n_480w$&wid=476&fit=constrain",
+        price: 2390,
+      },
+      {
+        id: nanoid(),
+        name: "Светло - голубой приталенный пиджак",
+        url:
+          "https://images.asos-media.com/products/svetlo-goluboj-pritalennyj-odnobortnyj-pidzhak-iz-trikotazha-s-latskanami-s-razrezami-topman/24178370-1-blue?$n_480w$&wid=476&fit=constrain",
+        price: 4790,
+      },
+      {
+        id: nanoid(),
+        name: "Розовый трикотажный блейзер",
+        url:
+          "https://images.asos-media.com/products/rozovyj-trikotazhnyj-blejzer-uzkogo-kroya-s-latskanami-s-razrezom-topman/24178173-1-pink?$n_480w$&wid=476&fit=constrain",
+        price: 4790,
+      },
+      {
+        id: nanoid(),
+        name: "Серый однобортный пиджак",
+        url:
+          "https://images.asos-media.com/products/seryj-odnobortnyj-pidzhak-zauzhennogo-kroya-s-latskanami-srazrezom-topman/24177804-1-grey?$n_480w$&wid=476&fit=constrain",
+        price: 6190,
+      },
+    ],
+    brand: [
+      {
+        id: nanoid(),
+        name: "Черная куртка авиатор BARKLAND",
+        url:
+          "https://images.asos-media.com/products/chernaya-kurtka-aviator-iziskusstvennoj-ovchiny-topman/24161147-1-black?$n_480w$&wid=476&fit=constrain",
+        price: 3390,
+      },
+      {
+        id: nanoid(),
+        name: "Серые зауженные брюки BARKLAND",
+        url:
+          "https://images.asos-media.com/products/serye-zauzhennye-bryuki-topman/24114988-1-grey?$n_480w$&wid=476&fit=constrain",
+        price: 3390,
+      },
+      {
+        id: nanoid(),
+        name: "Приталенный черный пиджак - смокинг BARKLAND",
+        url:
+          "https://images.asos-media.com/products/pritalennyj-odnobortnyj-pidzhak-smoking-chernogo-tsveta-s-latskanami-srazrezami-topman/24114611-1-black?$n_480w$&wid=476&fit=constrain",
+        price: 6190,
+      },
+      {
+        id: nanoid(),
+        name: "Серый приталенный однобортный пиджак BARKLAND",
+        url:
+          "https://images.asos-media.com/products/seryj-pritalennyj-odnobortnyj-pidzhak-s-latskanami-srazrezami-topman/24114605-1-grey?$n_480w$&wid=476&fit=constrain",
+        price: 6190,
+      },
+    ],
   },
   favorite: [],
 };
@@ -188,6 +248,34 @@ export const productsSlice = createSlice({
         );
       }
     },
+    addFavoriteSpirit: (state, action) => {
+      if (
+        state.favorite.includes(
+          state.favorite.filter((item) => item.id === action.payload)[0]
+        )
+      ) {
+        return state;
+      } else {
+        state.favorite.push(
+          state.products.spirit.filter(
+            (spirt) => spirt.id === action.payload
+          )[0]
+        );
+      }
+    },
+    addFavoriteBrand: (state, action) => {
+      if (
+        state.favorite.includes(
+          state.favorite.filter((item) => item.id === action.payload)[0]
+        )
+      ) {
+        return state;
+      } else {
+        state.favorite.push(
+          state.products.brand.filter((bran) => bran.id === action.payload)[0]
+        );
+      }
+    },
     removeFavorite: (state, action) => {
       state.favorite = state.favorite.filter(
         (item) => item.id !== action.payload
@@ -201,6 +289,8 @@ export const {
   addFavoritePants,
   addFavoriteShirt,
   addFavoriteCardigan,
+  addFavoriteSpirit,
+  addFavoriteBrand,
   removeFavorite,
 } = productsSlice.actions;
 
@@ -208,6 +298,8 @@ export const selectJacket = (state) => state.products.products.jackets;
 export const selectPants = (state) => state.products.products.pants;
 export const selectShirt = (state) => state.products.products.shirts;
 export const selectCardigan = (state) => state.products.products.cardigans;
+export const selectSpirit = (state) => state.products.products.spirit;
+export const selectBrand = (state) => state.products.products.brand;
 export const selectFavorite = (state) => state.products.favorite;
 
 export default productsSlice.reducer;

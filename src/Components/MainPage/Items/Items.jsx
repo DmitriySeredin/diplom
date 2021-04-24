@@ -47,11 +47,7 @@ const Items = () => {
           </div>
         </NavLink>
 
-        <NavLink
-          className={style.a}
-          to="/products/cardigans
-"
-        >
+        <NavLink className={style.a} to="/products/cardigans">
           <div className={style.imgWrapper}>
             <img
               className={style.img}

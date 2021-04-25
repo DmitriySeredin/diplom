@@ -1,10 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { selectFavorite } from "../../../store/reducers/products-reducer";
+import {
+  selectBasket,
+  selectFavorite,
+} from "../../../store/reducers/products-reducer";
 import style from "./Header.module.css";
 const Header = () => {
   const favoriteCount = useSelector(selectFavorite).length;
+  const basketCount = useSelector(selectBasket).length;
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -53,11 +57,14 @@ const Header = () => {
       </button>
 
       <button className={style.btn}>
+        {basketCount === 0 ? null : (
+          <span className={style.counter}>{basketCount}</span>
+        )}
         <NavLink to="/profile/buy">
           <img
             src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/88-512.png"
             alt="Корзина"
-            className={style.img}
+            className={basketCount === 0 ? style.img : style.favImg}
           />
         </NavLink>
       </button>

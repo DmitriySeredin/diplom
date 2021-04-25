@@ -5,9 +5,11 @@ import SignIn from "./Components/LoginPage/SignInPage/SignIn";
 import MainPage from "./Components/MainPage/MainPage";
 import Profile from "./Components/Profile/Profile";
 import Products from "./Components/Products/Products";
+import { useSelector } from "react-redux";
+import { isAuth } from "./store/reducers/auth-reducer";
 
 const App = () => {
-  const loggedIn = true;
+  const loggedIn = useSelector(isAuth);
   return (
     <Switch>
       <Route exact path="/" render={() => <MainPage />} />

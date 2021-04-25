@@ -25,6 +25,7 @@ const SignIn = () => {
             </span>
           </div>
         </div>
+
         <form className={style.form}>
           <label htmlFor="email">
             АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ:

@@ -1,8 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, Redirect } from "react-router-dom";
+import { auth, isAuth } from "../../../store/reducers/auth-reducer";
 import style from "./SignUp.module.css";
 
 const SignUp = () => {
+  const logged = useSelector(isAuth);
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  const dispatch = useDispatch();
+  const onSubmit = (data) => dispatch(auth(data));
   return (
     <div className={style.signUp}>
       <NavLink to="/" className={style.a}>
@@ -41,26 +52,57 @@ const SignUp = () => {
             лицам и не будем публиковать информацию от вашего имени
           </p>
         </div>
-        <form className={style.form}>
+
+        <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
           <h3>ИЛИ ЗАРЕГИСТРИРУЙСЯ С ПОМОЩЬЮ ЭЛЕКТРОННОЙ ПОЧТЫ</h3>
-          <label htmlFor="email">
+          <label>
             АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ:
-            <input type="email" name="email" />
+            <input
+              {...register("email", {
+                required: true,
+                pattern: {
+                  value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                  message: "Неправильный email адрес",
+                },
+              })}
+            />
+            {errors.email && <p>{errors.email.message}</p>}
           </label>
-          <label htmlFor="firstName">
+          <label>
             ИМЯ:
-            <input type="text" name="firstName" />
+            <input
+              type="text"
+              {...register("name", { required: true, maxLength: 80 })}
+            />
           </label>
-          <label htmlFor="lastName">
+          <label>
             ФАМИЛИЯ:
-            <input type="text" name="lastName" />
+            <input
+              type="text"
+              {...register("surname", { required: true, maxLength: 100 })}
+            />
           </label>
-          <label htmlFor="password">
+          <label>
             ПАРОЛЬ:
-            <input type="password" name="password" />
+            <input
+              type="password"
+              {...register("password", {
+                required: true,
+                minLength: {
+                  value: 8,
+                  message: "Минимальная длина пароля 8 символов",
+                },
+                pattern: {
+                  value: /^[A-Za-z0-9]+$/,
+                  message: "Не используйте кириллицу",
+                },
+              })}
+            />
+            {errors.password && <p>{errors.password.message}</p>}
           </label>
           <button className={style.btn}>ЗАРЕГИСТРИРОВАТЬСЯ НА HARAKTER</button>
         </form>
+        {logged ? <Redirect to="/profile" /> : null}
       </div>
     </div>
   );

@@ -27,6 +27,37 @@
   margin-bottom: 30px;
 }
 
+.list {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.list li {
+  padding: 10px 0 0 0;
+}
+
+.list strong {
+  padding-right: 10px;
+}
+
+.logout {
+  padding: 10px 20px 10px 20px;
+  margin-top: 20px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.logout:hover {
+  background-color: rgb(31, 31, 31);
+}
+
+.logout:active {
+  background-color: rgb(90, 90, 90);
+}
+
 .main {
   margin-top: 20px;
   display: grid;

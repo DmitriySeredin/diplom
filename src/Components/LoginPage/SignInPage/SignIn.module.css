@@ -126,9 +126,14 @@
 .btn {
   color: white;
   background-color: black;
+  cursor: pointer;
   border: none;
   outline: none;
   padding: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.btn:active {
+  background-color: #414141;
 }

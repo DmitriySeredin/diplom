@@ -2,6 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Route, Switch } from "react-router-dom";
 import {
+  name,
+  surname,
+  email,
+  logout,
+} from "../../store/reducers/auth-reducer";
+import {
   removeBasket,
   removeFavorite,
   selectBasket,
@@ -10,6 +16,9 @@ import {
 import style from "./Profile.module.css";
 
 const Profile = () => {
+  const userName = useSelector(name);
+  const userSurname = useSelector(surname);
+  const userEmail = useSelector(email);
   const favorite = useSelector(selectFavorite);
   const basket = useSelector(selectBasket);
   const dispatch = useDispatch();
@@ -26,7 +35,7 @@ const Profile = () => {
           <div className={style.info}>
             <div className={style.circle}></div>
             <p>
-              Здравствуйте, <strong>пользователь</strong>
+              Здравствуйте, <strong>{userName}</strong>
             </p>
           </div>
           <div className={style.links}>
@@ -50,7 +59,27 @@ const Profile = () => {
         <div className={style.content}>
           <Switch>
             <Route exact path="/profile">
-              <p>Профиль</p>
+              <h3>Профиль</h3>
+              <ul className={style.list}>
+                <li>
+                  <strong>ИМЯ: </strong>
+                  {userName}
+                </li>
+                <li>
+                  <strong>ФАМИЛИЯ: </strong>
+                  {userSurname}
+                </li>
+                <li>
+                  <strong>Email: </strong>
+                  {userEmail}
+                </li>
+              </ul>
+              <button
+                className={style.logout}
+                onClick={() => dispatch(logout())}
+              >
+                Выйти
+              </button>
             </Route>
             <Route path="/profile/favorite">
               <h3 className={style.h3}>ИЗБРАННОЕ</h3>

@@ -7,6 +7,7 @@ import Profile from "./Components/Profile/Profile";
 import Products from "./Components/Products/Products";
 import { useSelector } from "react-redux";
 import { isAuth } from "./store/reducers/auth-reducer";
+import Payment from "./Components/Payment/Payment";
 
 const App = () => {
   const loggedIn = useSelector(isAuth);
@@ -16,6 +17,7 @@ const App = () => {
       <Route path="/signup" render={() => <SignUp />} />
       <Route path="/signin" render={() => <SignIn />} />
       <Route path="/products" render={() => <Products />} />
+      <Route path="/payment" render={() => <Payment />} />
       <Route exact path="/profile">
         {loggedIn ? <Profile /> : <Redirect to="/signin" />}
       </Route>

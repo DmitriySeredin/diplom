@@ -371,6 +371,9 @@ export const productsSlice = createSlice({
     removeBasket: (state, action) => {
       state.basket = state.basket.filter((item) => item.id !== action.payload);
     },
+    clearBasket: (state) => {
+      state.basket = [];
+    },
   },
 });
 
@@ -389,6 +392,7 @@ export const {
   buySpirit,
   buyBrand,
   removeBasket,
+  clearBasket,
 } = productsSlice.actions;
 
 export const selectJacket = (state) => state.products.products.jackets;

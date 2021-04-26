@@ -1,0 +1,168 @@
+.payment {
+  padding: 1rem 20% 0 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  gap: 200px;
+  align-items: center;
+}
+
+.check {
+  grid-area: check;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
+  width: auto;
+  background-color: white;
+  margin-bottom: 50px;
+}
+
+.section {
+  width: 100%;
+  padding: 20px;
+}
+
+.section:first-of-type {
+  margin-top: 40px;
+}
+
+.section span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.section p {
+  margin-top: 10px;
+}
+
+.bigform {
+  width: 100%;
+}
+
+.form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin: 10px 0 10px 0;
+  width: 200px;
+  height: 30px;
+}
+
+.select {
+  height: 30px;
+  margin: 10px 0 10px 0;
+  width: 200px;
+  border: 1px solid black;
+  background-color: white;
+  outline: none;
+}
+
+.sidebar {
+  padding: 10px;
+  grid-area: sidebar;
+  height: auto;
+  width: auto;
+  background-color: white;
+  margin-bottom: 50px;
+}
+
+.main {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 250px 250px 300px;
+  grid-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "check check sidebar"
+    "check check sidebar";
+}
+
+.count {
+  margin-left: 35px;
+  margin-top: 30px;
+  width: 200px;
+  text-align: center;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.items {
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: auto;
+  width: 260px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.product img {
+  height: 120px;
+  width: 100px;
+}
+
+.info {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info p {
+  font-size: 12px;
+}
+
+.info span {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.summary h3 {
+  font-size: 16px;
+}
+
+.a {
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.offer {
+  cursor: pointer;
+  width: 100%;
+  padding: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  background-color: rgb(37, 192, 37);
+}
+
+.offer:hover {
+  background-color: rgba(37, 192, 37, 0.651);
+}
+
+.offer:active {
+  background-color: rgb(91, 199, 91);
+}

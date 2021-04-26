@@ -1,12 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { isAuth } from "../../../store/reducers/auth-reducer";
 import {
   selectBasket,
   selectFavorite,
 } from "../../../store/reducers/products-reducer";
 import style from "./Header.module.css";
 const Header = () => {
+  const loggedIn = useSelector(isAuth);
   const favoriteCount = useSelector(selectFavorite).length;
   const basketCount = useSelector(selectBasket).length;
   const handleSubmit = (e) => {
@@ -44,27 +46,31 @@ const Header = () => {
       </button>
 
       <button className={style.btn}>
-        {favoriteCount === 0 ? null : (
+        {favoriteCount === 0 || !loggedIn ? null : (
           <span className={style.counter}>{favoriteCount}</span>
         )}
         <NavLink to="/profile/favorite">
           <img
             src="https://image.flaticon.com/icons/png/24/9/9294.png"
             alt="Избранное"
-            className={favoriteCount === 0 ? style.img : style.favImg}
+            className={
+              favoriteCount === 0 || !loggedIn ? style.img : style.favImg
+            }
           />
         </NavLink>
       </button>
 
       <button className={style.btn}>
-        {basketCount === 0 ? null : (
+        {basketCount === 0 || !loggedIn ? null : (
           <span className={style.counter}>{basketCount}</span>
         )}
         <NavLink to="/profile/buy">
           <img
             src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/88-512.png"
             alt="Корзина"
-            className={basketCount === 0 ? style.img : style.favImg}
+            className={
+              basketCount === 0 || !loggedIn ? style.img : style.favImg
+            }
           />
         </NavLink>
       </button>

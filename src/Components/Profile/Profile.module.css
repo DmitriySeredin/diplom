@@ -131,6 +131,7 @@
 }
 
 .block button {
+  border-radius: 5px;
   cursor: pointer;
   outline: none;
   text-align: center;
@@ -164,4 +165,29 @@
   color: #2d2d2d;
   font-weight: bold;
   letter-spacing: 0.5px;
+}
+
+.sum {
+  margin-top: 20px;
+  width: 200px;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.buy {
+  background-color: black;
+  color: white;
+  border: 1px solid #999;
+  text-align: center;
+  font-size: 13px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.buy:hover {
+  background-color: rgb(58, 58, 58);
+}
+
+.buy:active {
+  background-color: rgb(110, 110, 110);
 }

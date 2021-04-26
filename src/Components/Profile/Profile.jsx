@@ -22,6 +22,16 @@ const Profile = () => {
   const favorite = useSelector(selectFavorite);
   const basket = useSelector(selectBasket);
   const dispatch = useDispatch();
+  let cost = null;
+  if (basket.length !== 0) {
+    cost = basket
+      .map((item) => {
+        return item.price;
+      })
+      .reduce(function (a, b) {
+        return a + b;
+      });
+  }
   return (
     <div className={style.profile}>
       <div className={style.header}>
@@ -124,6 +134,14 @@ const Profile = () => {
                 })
               ) : (
                 <h3 className={style.h3}>НЕТ ТОВАРОВ</h3>
+              )}
+              {basket.length === 0 ? null : (
+                <div className={style.sum}>
+                  <span>Всего: {cost} руб.</span>
+                  <NavLink to="/payment" className={style.a}>
+                    <div className={style.buy}>Оформить заказ</div>
+                  </NavLink>
+                </div>
               )}
             </Route>
           </Switch>

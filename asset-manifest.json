@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/diplom/static/css/main.5e85c913.chunk.css",
+    "main.js": "/diplom/static/js/main.d8c474fe.chunk.js",
+    "main.js.map": "/diplom/static/js/main.d8c474fe.chunk.js.map",
+    "runtime-main.js": "/diplom/static/js/runtime-main.adb470eb.js",
+    "runtime-main.js.map": "/diplom/static/js/runtime-main.adb470eb.js.map",
+    "static/js/2.0684eda9.chunk.js": "/diplom/static/js/2.0684eda9.chunk.js",
+    "static/js/2.0684eda9.chunk.js.map": "/diplom/static/js/2.0684eda9.chunk.js.map",
+    "index.html": "/diplom/index.html",
+    "static/css/main.5e85c913.chunk.css.map": "/diplom/static/css/main.5e85c913.chunk.css.map",
+    "static/js/2.0684eda9.chunk.js.LICENSE.txt": "/diplom/static/js/2.0684eda9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.adb470eb.js",
+    "static/js/2.0684eda9.chunk.js",
+    "static/css/main.5e85c913.chunk.css",
+    "static/js/main.d8c474fe.chunk.js"
+  ]
+}

@@ -10,12 +10,20 @@ import style from "./Payment.module.css";
 
 const Payment = () => {
   const dispatch = useDispatch();
-  const [city, setCity] = useState("");
-  const [adress, setAdress] = useState("");
+  const [pay, setPay] = useState(false);
+  const [street, setStreet] = useState("");
+  const [house, setHouse] = useState("");
+  const [ap, setAp] = useState("");
+  const [number, setNumber] = useState("");
   const [index, setIndex] = useState("");
-  const [delivery, setDelivery] = useState(null);
+  const [delivery, setDelivery] = useState("Самовывозом");
   const basket = useSelector(selectBasket);
   const userEmail = useSelector(email);
+  const submit = (e) => {
+    e.preventDefault();
+    alert("Ваш заказ оплачен");
+    dispatch(clearBasket());
+  };
   let cost = null;
   if (basket.length !== 0) {
     cost = basket
@@ -26,13 +34,6 @@ const Payment = () => {
         return a + b;
       });
   }
-  const submit = (e) => {
-    dispatch(clearBasket());
-    alert(
-      `Ваш заказ принят, будет доставлен ${delivery}, по адресу ${adress}, город ${city}. Почтовый индекс: ${index}. Стоимость заказа: ${cost}`
-    );
-    return;
-  };
   return (
     <div className={style.payment}>
       <div className={style.header}>
@@ -42,62 +43,125 @@ const Payment = () => {
         <h2>ОФОРМЛЕНИЕ ЗАКАЗА</h2>
       </div>
       <div className={style.main}>
-        <div className={style.check}>
-          <div className={style.section}>
-            <span>СТРАНА ДОСТАВКИ:</span>
-            <p>РОССИЯ</p>
-          </div>
-          <div className={style.section}>
-            <span>ЭЛЕКТРОННАЯ ПОЧТА:</span>
-            <p>{userEmail}</p>
-          </div>
-          <form className={style.bigform} onSubmit={() => submit()}>
+        {pay ? (
+          <div className={style.check}>
             <div className={style.section}>
-              <span>АДРЕС ДОСТАВКИ:</span>
-              <div className={style.form}>
-                <label>Город:</label>
-                <input
-                  required
-                  type="text"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  className={style.input}
-                />
-                <label>Адрес:</label>
-                <input
-                  required
-                  type="text"
-                  value={adress}
-                  onChange={(e) => setAdress(e.target.value)}
-                  className={style.input}
-                />
-                <label>Индекс:</label>
-                <input
-                  required
-                  type="text"
-                  value={index}
-                  onChange={(e) => setIndex(e.target.value)}
-                  className={style.input}
-                />
-              </div>
+              <span>ДАННЫЕ ОПЛАТЫ:</span>
+              <p>
+                <strong>Город: </strong>БЛАГОВЕЩЕНСК
+              </p>
+              <p>
+                <strong>Улица: </strong>
+                {street}
+              </p>
+              <p>
+                <strong>Дом: </strong>
+                {house}
+              </p>
+              <p>
+                <strong>Квартира: </strong>
+                {ap}
+              </p>
+              <p>
+                <strong>Почтовый Индекс: </strong>
+                {index}
+              </p>
+              <p>
+                <strong>Номер телефона: </strong>
+                {number}
+              </p>
+              <p>
+                <strong>Способ доставки: </strong>
+                {delivery}
+              </p>
+            </div>
+            <div className={style.newsection}>
+              <span>СПОСОБ ОПЛАТЫ</span>
+              <form className={style.payForm} onSubmit={(e) => submit(e)}>
+                <label>Номер карты:</label>
+                <input required type="text" />
+                <label>Дата истечения срока действия:</label>
+                <input required type="date" />
+                <label>CVV:</label>
+                <input required type="password" />
+                <button className={style.offer}>ОПЛАТИТЬ ЗАКАЗ</button>
+              </form>
+            </div>
+          </div>
+        ) : (
+          <div className={style.check}>
+            <div className={style.section}>
+              <span>ГОРОД ДОСТАВКИ:</span>
+              <p>БЛАГОВЕЩЕНСК</p>
             </div>
             <div className={style.section}>
-              <span>СПОСОБ ДОСТАВКИ:</span>
-              <div>
-                <select
-                  className={style.select}
-                  onChange={(e) => setDelivery(e.target.value)}
-                >
-                  <option value="Курьером (2-3 дня)">
-                    Курьером бесплатно (2-3 дня)
-                  </option>
-                  <option value="Самовывоз">Самовывоз</option>
-                </select>
-              </div>
+              <span>ЭЛЕКТРОННАЯ ПОЧТА:</span>
+              <p>{userEmail}</p>
             </div>
-            <button className={style.offer}>ЗАКАЗАТЬ</button>
-          </form>
-        </div>
+            <form className={style.bigform} onSubmit={() => setPay(true)}>
+              <div className={style.section}>
+                <span>АДРЕС ДОСТАВКИ:</span>
+                <div className={style.form}>
+                  <label>Улица:</label>
+                  <input
+                    required
+                    type="text"
+                    value={street}
+                    onChange={(e) => setStreet(e.target.value)}
+                    className={style.input}
+                  />
+                  <label>Дом:</label>
+                  <input
+                    required
+                    type="text"
+                    value={house}
+                    onChange={(e) => setHouse(e.target.value)}
+                    className={style.input}
+                  />
+                  <label>Квартира:</label>
+                  <input
+                    required
+                    type="text"
+                    value={ap}
+                    onChange={(e) => setAp(e.target.value)}
+                    className={style.input}
+                  />
+                  <label>Индекс:</label>
+                  <input
+                    required
+                    type="text"
+                    value={index}
+                    onChange={(e) => setIndex(e.target.value)}
+                    className={style.input}
+                  />
+                  <label>Номер телефона:</label>
+                  <input
+                    required
+                    type="text"
+                    value={number}
+                    onChange={(e) => setNumber(e.target.value)}
+                    className={style.input}
+                  />
+                </div>
+              </div>
+              <div className={style.section}>
+                <span>СПОСОБ ДОСТАВКИ:</span>
+                <div>
+                  <select
+                    className={style.select}
+                    onChange={(e) => setDelivery(e.target.value)}
+                  >
+                    <option value="Самовывозом">Самовывоз</option>
+                    <option value="Курьером (2-3 дня)">
+                      Курьером бесплатно (2-3 дня)
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <button className={style.offer}>ЗАКАЗАТЬ</button>
+            </form>
+          </div>
+        )}
         <div className={style.sidebar}>
           <div className={style.count}>
             <h3>КОЛИЧЕСТВО ТОВАРОВ - {basket.length}</h3>

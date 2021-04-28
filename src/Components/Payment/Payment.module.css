@@ -26,6 +26,11 @@
   padding: 20px;
 }
 
+.newsection {
+  padding-left: 20px;
+  width: 100%;
+}
+
 .section:first-of-type {
   margin-top: 40px;
 }
@@ -165,4 +170,21 @@
 
 .offer:active {
   background-color: rgb(91, 199, 91);
+}
+
+.payForm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.payForm input {
+  margin: 10px 0 10px 0;
+  width: 200px;
+  height: 30px;
+}
+
+.payForm button {
+  margin-left: -20px;
+  margin-top: 20px;
 }

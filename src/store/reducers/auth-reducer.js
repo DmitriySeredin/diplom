@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isAuth: JSON.parse(localStorage.isAuth || false),
-  email: JSON.parse(localStorage.email || null),
-  password: JSON.parse(localStorage.password || null),
-  name: JSON.parse(localStorage.name || null),
-  surname: JSON.parse(localStorage.surname || null),
+  email: localStorage.email || null,
+  password: localStorage.password || null,
+  name: localStorage.name || null,
+  surname: localStorage.surname || null,
 };
 
 export const authSlice = createSlice({
@@ -13,22 +13,18 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     auth: (state, action) => {
-      state.isAuth = localStorage.isAuth = JSON.stringify(true);
-      state.email = localStorage.email = JSON.stringify(action.payload.email);
-      state.password = localStorage.password = JSON.stringify(
-        action.payload.password
-      );
-      state.name = localStorage.name = JSON.stringify(action.payload.name);
-      state.surname = localStorage.surname = JSON.stringify(
-        action.payload.surname
-      );
+      state.isAuth = Boolean((localStorage.isAuth = "true"));
+      state.email = localStorage.email = action.payload.email;
+      state.password = localStorage.password = action.payload.password;
+      state.name = localStorage.name = action.payload.name;
+      state.surname = localStorage.surname = action.payload.surname;
     },
     login: (state, action) => {
       if (
         state.email === action.payload.email &&
         state.password === action.payload.password
       ) {
-        state.isAuth = localStorage.isAuth = JSON.stringify(true);
+        state.isAuth = Boolean((localStorage.isAuth = "true"));
       } else {
         state.isAuth = localStorage.isAuth = false;
       }
